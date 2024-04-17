@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   barra: {
     height: 70,
     width: '100%',
-    backgroundColor: '#365B6D',
+    backgroundColor: '#221f17',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

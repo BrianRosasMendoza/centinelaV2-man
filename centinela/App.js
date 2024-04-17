@@ -32,7 +32,7 @@ function MyStack() {
           headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
-            backgroundColor:'#365B6D'
+            backgroundColor:'#221f17'
           }
         }
       }/>
@@ -42,7 +42,7 @@ function MyStack() {
           headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
-            backgroundColor:'#365B6D'
+            backgroundColor:'#221f17'
           }
         }
       } />
@@ -52,7 +52,7 @@ function MyStack() {
           headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
-            backgroundColor:'#365B6D'
+            backgroundColor:'#221f17'
           }
         }
       } />
@@ -62,7 +62,7 @@ function MyStack() {
           headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
-            backgroundColor:'#365B6D'
+            backgroundColor:'#221f17'
           }
         }
       }/>
@@ -72,7 +72,7 @@ function MyStack() {
           headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
-            backgroundColor:'#365B6D'
+            backgroundColor:'#221f17'
           }
         }
       }/>
@@ -82,7 +82,7 @@ function MyStack() {
           headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
-            backgroundColor:'#365B6D'
+            backgroundColor:'#221f17'
           }
         }
       }/>
@@ -92,7 +92,7 @@ function MyStack() {
           headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
-            backgroundColor:'#365B6D'
+            backgroundColor:'#221f17'
           }
         }
       }/>
@@ -102,7 +102,7 @@ function MyStack() {
           headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
-            backgroundColor:'#365B6D'
+            backgroundColor:'#221f17'
           }
         }
       }/>
@@ -112,7 +112,7 @@ function MyStack() {
           headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
-            backgroundColor:'#365B6D'
+            backgroundColor:'#221f17'
           }
         }
       }/>
@@ -122,7 +122,7 @@ function MyStack() {
           headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
-            backgroundColor:'#365B6D'
+            backgroundColor:'#221f17'
           }
         }
       }/>
@@ -132,7 +132,7 @@ function MyStack() {
           headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
-            backgroundColor:'#365B6D'
+            backgroundColor:'#221f17'
           }
         }
       }/>
@@ -142,7 +142,7 @@ function MyStack() {
           headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
-            backgroundColor:'#365B6D'
+            backgroundColor:'#221f17'
           }
         }
       }/>
@@ -152,7 +152,7 @@ function MyStack() {
           headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
-            backgroundColor:'#365B6D'
+            backgroundColor:'#221f17'
           }
         }
       }/>
