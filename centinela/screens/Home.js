@@ -81,29 +81,14 @@ export default function Home(props) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.carouselContainer}>
-        <Swiper style={styles.wrapper} showsButtons={true}>
-        <View style={styles.slide}>
-            <Image source={require('../assets/img1.jpg')} style={styles.image} />
-          </View>
-          <View style={styles.slide}>
-            <Image source={require('../assets/img2.jpg')} style={styles.image} />
-          </View>
-          <View style={styles.slide}>
-            <Image source={require('../assets/img3.jpg')} style={styles.image} />
-          </View>
-          <View style={styles.slide}>
-            <Image source={require('../assets/img4.jpg')} style={styles.image} />
-          </View>
-          </Swiper>
-      </View>
+
       <View style={styles.slide}>
         <TouchableWithoutFeedback>
           <ImageZoom
-            cropWidth={300}
-            cropHeight={300}
-            imageWidth={200}
-            imageHeight={200}
+            cropWidth={2000}
+            cropHeight={700}
+            imageWidth={1500}
+            imageHeight={1500}
           >
             <View style={styles.mapContainer}>
               <Image source={require('../assets/map.png')} style={styles.image2} />
