@@ -60,7 +60,7 @@ export default function PerfilUsuario({ navigation }) {
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('EditarUsuario')}>
           <Text style={styles.buttonText}>Editar</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('InfoContacto')}>
+        <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate('InfoContacto')}>
           <Text style={styles.buttonText}>Contacto de emergencia</Text>
 
         </TouchableOpacity>
@@ -117,8 +117,17 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   button: {
-    backgroundColor: '#365B6D',
+    backgroundColor: '#4e462a',
     width: 140,
+    height: 40,
+    borderRadius: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
+  },
+  button2: {
+    backgroundColor: '#4e462a',
+    width: 200,
     height: 40,
     borderRadius: 15,
     alignItems: 'center',
