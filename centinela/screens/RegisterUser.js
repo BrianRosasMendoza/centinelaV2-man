@@ -24,7 +24,7 @@ export default function RegisterUser(props) {
     return (
         <View style={styles.container}>
             <Image style={styles.img} source={require("../assets/userB.png")}/>
-            <Text style={styles.text}>Ingresar</Text>
+            <Text style={styles.text}>SIGN UP</Text>
             <TextInput style={styles.input} placeholder="Correo" onChangeText={(text)=>setEmail(text)}/>
             <TextInput style={styles.input} placeholder="Contraseña" secureTextEntry={true} onChangeText={(text)=>setPassword(text)}/>  
             <TouchableOpacity style={styles.boton} onPress={registro}>

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
 import appFirebase from '../credenciales';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from 'firebase/auth';
 
 const auth = getAuth(appFirebase);
+const googleProvider = new GoogleAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
 
 export default function Login(props) {
     const [email, setEmail] = useState('');
@@ -19,13 +21,35 @@ export default function Login(props) {
         }
     };
 
+    // Manejador para iniciar sesión con Google
+    const handleGoogleSignIn = async () => {
+        try {
+            await signInWithPopup(auth, googleProvider);
+            props.navigation.navigate('Home');
+        } catch (error) {
+            console.error('Error al iniciar sesión con Google:', error);
+            Alert.alert('Error', 'No se pudo iniciar sesión con Google.');
+        }
+    };
+
+    // Manejador para iniciar sesión con Facebook
+    const handleFacebookSignIn = async () => {
+        try {
+            await signInWithPopup(auth, facebookProvider);
+            props.navigation.navigate('Home');
+        } catch (error) {
+            console.error('Error al iniciar sesión con Facebook:', error);
+            Alert.alert('Error', 'No se pudo iniciar sesión con Facebook.');
+        }
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.card}>
                 <Text style={styles.title}>Login</Text>
 
                 <View style={styles.avatarContainer}>
-                    <Image source={require("../assets/user_icon.png")} style={styles.avatar} />
+                    <Image source={require("../assets/user4.png")} style={styles.avatar} />
                 </View>
 
                 <Text style={styles.label}>Correo Electrónico</Text>
@@ -57,12 +81,12 @@ export default function Login(props) {
                 <Text style={styles.alternativeLoginText}>Iniciar sesión de otra manera</Text>
 
                 <View style={styles.socialLogin}>
-                    <TouchableOpacity style={styles.socialButton}>
+                    <TouchableOpacity style={styles.socialButton} onPress={handleGoogleSignIn}>
                         <Image source={require("../assets/google_icon.jpg")} style={styles.socialIcon} />
                         <Text style={styles.socialText}>Google</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.socialButton}>
+                    <TouchableOpacity style={styles.socialButton} onPress={handleFacebookSignIn}>
                         <Image source={require("../assets/facebook_icon.png")} style={styles.socialIcon} />
                         <Text style={styles.socialText}>Facebook</Text>
                     </TouchableOpacity>
@@ -76,14 +100,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center', // Centra la tarjeta en el contenedor
+        alignItems: 'center',
         padding: 20,
     },
     card: {
-        width: '30%', // Reduce el ancho de la tarjeta al 80%
+        width: '30%',
         padding: 20,
         borderRadius: 15,
-        backgroundColor: '#fffaf6', // Color de fondo gris claro
+        backgroundColor: '#fffaf6',
         shadowColor: '#000',
         shadowOffset: {
             width: 0,
@@ -92,8 +116,8 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.3,
         shadowRadius: 5,
         elevation: 3,
-        justifyContent: 'center', // Asegura que los elementos de la tarjeta estén centrados verticalmente
-        alignItems: 'center', // Asegura que los elementos de la tarjeta estén centrados horizontalmente
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     title: {
         fontSize: 24,
