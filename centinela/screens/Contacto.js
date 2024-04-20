@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     borderRadius: 20
   },
   boton: {
-    backgroundColor: '#365B6D',
+    backgroundColor: '#a29259',
     fontVariant: 'bold',
     width: 200,
     height: 40,
@@ -145,6 +145,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: 'white'
+    color: '#f7faf8'
   }
 });

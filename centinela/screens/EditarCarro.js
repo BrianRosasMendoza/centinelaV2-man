@@ -145,8 +145,8 @@ const styles = StyleSheet.create({
     marginBottom: 30
   },
   input: {
-    width: '100%',
-    height: 40,
+    width: '90%',
+    height: 45,
     borderWidth: 1,
     borderColor: 'gray',
     marginBottom: 20,
@@ -154,17 +154,18 @@ const styles = StyleSheet.create({
     borderRadius: 20
   },
   boton: {
-    backgroundColor: '#365B6D',
+    backgroundColor: '#a29259',
     fontVariant: 'bold',
-    width: 160,
-    height: 70,
-    alignContent: 'center',
+    alignContent: 'center' ,
+    width: 190,
+    height: 50,
     borderRadius: 15
   },
   textButton: {
     fontSize: 25,
     fontWeight: 'bold',
+    paddingTop: '5%',
     textAlign: 'center',
-    color: 'white'
+    color: '#f7faf8'
   }
 });

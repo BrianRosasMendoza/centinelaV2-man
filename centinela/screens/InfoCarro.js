@@ -136,16 +136,16 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
+    padding: 15,
   },
   text: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 30,
+    marginBottom: 20,
   },
   button: {
-    backgroundColor: '#365B6D',
-    width: 140,
+    backgroundColor: '#a29259',
+    width: 180,
     height: 40,
     borderRadius: 15,
     alignItems: 'center',
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   buttonText: {
-    color: 'white',
+    color: '#f7faf8',
     fontWeight: 'bold',
   },
 });
