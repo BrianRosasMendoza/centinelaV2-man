@@ -38,7 +38,7 @@ export default function RegisterUser(props) {
         <View style={styles.container}>
             <View style={styles.card}>
                 <Image style={styles.img} source={require("../assets/user4.png")} />
-                <Text style={styles.text}>SIGN UP</Text>
+                <Text style={styles.text}>Sing Up</Text>
 
                 <View style={styles.inputContainer}>
                     <Icon name="user" size={20} color="#727272" style={styles.icon} />
@@ -93,7 +93,7 @@ export default function RegisterUser(props) {
                 </View>
 
                 <TouchableOpacity style={styles.boton} onPress={registro}>
-                    <Text style={styles.textButton}>Registrar</Text>
+                    <Text style={styles.textButton}>REGISTRAR</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -102,13 +102,13 @@ export default function RegisterUser(props) {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 3,
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
     },
     card: {
-        width: '40%',
+        width: 370,
         padding: 20,
         borderRadius: 15,
         backgroundColor: '#fffaf6',
@@ -120,16 +120,17 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.3,
         shadowRadius: 5,
         elevation: 3,
+        justifyContent: 'center',
         alignItems: 'center',
     },
     img: {
-        width: 200,
-        height: 200,
+        width: 100,
+        height: 100,
         marginBottom: 15,
         borderRadius: 25,
     },
     text: {
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: 'bold',
         marginBottom: 30,
     },
@@ -137,15 +138,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         width: '100%',
-        height: 40,
+        height: 50,
         borderWidth: 1,
-        borderColor: 'gray',
-        borderRadius: 20,
-        marginBottom: 15,
-        paddingHorizontal: 10,
+        borderColor: '#E1E1E1',
+        borderRadius: 10,
+        marginBottom: 10,
+        paddingHorizontal: 17,
+        backgroundColor: '#F0F0F0',
     },
     icon: {
-        marginRight: 10,
+        marginRight: 17,
     },
     input: {
         flex: 1,
@@ -162,9 +164,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 15,
+        marginTop: 30,
     },
     textButton: {
-        fontSize: 25,
+        fontSize: 16,
         fontWeight: 'bold',
         textAlign: 'center',
         color: 'white',
