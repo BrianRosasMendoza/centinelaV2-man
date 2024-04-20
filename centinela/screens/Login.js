@@ -48,7 +48,7 @@ export default function Login(props) {
             <View style={styles.card}>
 
                 <View style={styles.avatarContainer}>
-                    <Image source={require("../assets/user4.png")} style={styles.avatar} />
+                    <Image source={require("../assets/logo.png")} style={styles.avatar} />
                 </View>
                 <Text style={styles.title}>Log In</Text>
 
