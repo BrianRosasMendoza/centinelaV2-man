@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     borderRadius: 20
   },
   boton: {
-    backgroundColor: '#365B6D',
+    backgroundColor: '#a29259',
     fontVariant: 'bold',
     width: 160,
     height: 70,
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     borderRadius: 15
   },
   textButton: {
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
     color: 'white'

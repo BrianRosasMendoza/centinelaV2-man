@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 15,
+    padding: 10,
   },
   text: {
     fontSize: 20,
@@ -146,8 +146,8 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#a29259',
     width: 180,
-    height: 40,
-    borderRadius: 15,
+    height: 50,
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
@@ -155,6 +155,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#f7faf8',
     fontWeight: 'bold',
+    fontSize: 16,
   },
 });
 

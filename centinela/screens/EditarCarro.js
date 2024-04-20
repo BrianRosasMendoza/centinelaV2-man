@@ -143,15 +143,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 30
+    
   },
   input: {
-    width: '90%',
-    height: 45,
+    width: 370,
+    height: 50,
     borderWidth: 1,
     borderColor: 'gray',
-    marginBottom: 20,
+    marginBottom: 15,
     padding: 10,
-    borderRadius: 20
+    borderRadius: 10
   },
   boton: {
     backgroundColor: '#a29259',
@@ -159,13 +160,15 @@ const styles = StyleSheet.create({
     alignContent: 'center' ,
     width: 190,
     height: 50,
-    borderRadius: 15
+    borderRadius: 10,
+    marginTop: 20,    
+    alignItems: 'center'
+
   },
   textButton: {
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: 'bold',
-    paddingTop: '5%',
-    textAlign: 'center',
-    color: '#f7faf8'
+    paddingTop: 10,
+    color: '#fff'
   }
 });
