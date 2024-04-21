@@ -14,25 +14,33 @@ export default function RegisterUser(props) {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
-    const registro = async () => {
-        if (!username || !email || !password || !confirmPassword) {
-            Alert.alert('Error', 'Todos los campos son obligatorios');
-            return;
-        }
-        if (password !== confirmPassword) {
-            Alert.alert('Error', 'Las contraseñas no coinciden');
-            return;
-        }
+const registro = async () => {
+    if (!username || !email || !password || !confirmPassword) {
+        Alert.alert('Error', 'Todos los campos son obligatorios');
+        return;
+    }
+    if (password !== confirmPassword) {
+        Alert.alert('Error', 'Las contraseñas no coinciden');
+        return;
+    }
 
-        try {
-            await createUserWithEmailAndPassword(auth, email, password);
-            Alert.alert('Registro exitoso', 'Redirigiendo a la pantalla de inicio de sesión...');
-            props.navigation.navigate('Login'); // Asegúrate de que 'Login' sea la pantalla correcta para redirigir
-        } catch (error) {
-            console.error(error);
-            Alert.alert('Error', 'No se pudo registrar el usuario');
+    try {
+        await createUserWithEmailAndPassword(auth, email, password);
+        Alert.alert('Registro exitoso', 'Redirigiendo a la pantalla de inicio de sesión...');
+        // Agregar un pequeño retraso antes de redirigir para asegurar que la alerta sea visible
+        setTimeout(() => {
+            props.navigation.navigate('Login');
+        }, 1000);
+    } catch (error) {
+        console.error(error);
+        let errorMessage = 'No se pudo registrar el usuario';
+        if (error.code === 'auth/email-already-in-use') {
+            errorMessage = 'El correo electrónico ya está en uso';
         }
-    };
+        Alert.alert('Error', errorMessage);
+    }
+};
+
 
     return (
         <View style={styles.container}>
