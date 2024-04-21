@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
-import appFirebase from '../credenciales';
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from 'firebase/auth';
+import Icon from 'react-native-vector-icons/FontAwesome'; // Importa el icono
+import appFirebase from '../credenciales';
 
 const auth = getAuth(appFirebase);
 const googleProvider = new GoogleAuthProvider();
@@ -53,13 +54,16 @@ export default function Login(props) {
                 <Text style={styles.title}>Log In</Text>
 
                 <Text style={styles.label}>Correo Electrónico</Text>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Correo"
-                    value={email}
-                    onChangeText={setEmail}
-                    placeholderTextColor="#727272"
-                />
+                <View style={styles.inputContainer}>
+                    <Icon name="envelope" size={20} color="#727272" style={styles.icon} /> {/* Icono de correo */}
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Correo"
+                        value={email}
+                        onChangeText={setEmail}
+                        placeholderTextColor="#727272"
+                    />
+                </View>
                 <Text style={styles.label}>Contraseña</Text>
                 <TextInput
                     style={styles.input}
@@ -69,6 +73,7 @@ export default function Login(props) {
                     onChangeText={setPassword}
                     placeholderTextColor="#727272"
                 />
+                
 
                 <TouchableOpacity style={styles.btn} onPress={logueo}>
                     <Text style={styles.btnText}>INGRESAR</Text>
@@ -142,17 +147,25 @@ const styles = StyleSheet.create({
         color: '#727272',
         textAlign: 'rigth',
     },
-    input: {
+    inputContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
         width: '100%',
-        height: 50,
+        height: 50, // Altura adecuada para alinear con otros campos
         borderWidth: 1,
         borderColor: '#E1E1E1',
         marginBottom: 20,
         padding: 8,
         borderRadius: 10,
-        fontSize: 14,
-        
         backgroundColor: '#F0F0F0',
+    },
+    icon: {
+        marginRight: 10,
+    },
+    input: {
+        flex: 1,
+        height: '100%', // Para ocupar toda la altura del contenedor
+        fontSize: 14,
     },
     btn: {
         width: 120,
@@ -169,7 +182,6 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#FFFFFF',
         textTransform: 'uppercase',
-
     },
     registerBtn: {
         marginTop: 15,
@@ -187,7 +199,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#a29259',
         textTransform: 'uppercase',
-        
     },
     alternativeLoginText: {
         marginTop: 25,

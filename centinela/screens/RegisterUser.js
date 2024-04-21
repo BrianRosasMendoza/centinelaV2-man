@@ -14,38 +14,38 @@ export default function RegisterUser(props) {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
-const registro = async () => {
-    if (!username || !email || !password || !confirmPassword) {
-        Alert.alert('Error', 'Todos los campos son obligatorios');
-        return;
-    }
-    if (password !== confirmPassword) {
-        Alert.alert('Error', 'Las contraseñas no coinciden');
-        return;
-    }
-
-    try {
-        await createUserWithEmailAndPassword(auth, email, password);
-        Alert.alert('Registro exitoso', 'Redirigiendo a la pantalla de inicio de sesión...');
-        // Agregar un pequeño retraso antes de redirigir para asegurar que la alerta sea visible
-        setTimeout(() => {
-            props.navigation.navigate('Login');
-        }, 1000);
-    } catch (error) {
-        console.error(error);
-        let errorMessage = 'No se pudo registrar el usuario';
-        if (error.code === 'auth/email-already-in-use') {
-            errorMessage = 'El correo electrónico ya está en uso';
+    const registro = async () => {
+        if (!username || !email || !password || !confirmPassword) {
+            Alert.alert('Error', 'Todos los campos son obligatorios');
+            return;
         }
-        Alert.alert('Error', errorMessage);
-    }
-};
-
+        if (password !== confirmPassword) {
+            Alert.alert('Error', 'Las contraseñas no coinciden');
+            return;
+        }
+    
+        try {
+            await createUserWithEmailAndPassword(auth, email, password);
+            Alert.alert('Registro exitoso', 'Redirigiendo a la pantalla de inicio de sesión...');
+            // Agregar un pequeño retraso antes de redirigir para asegurar que la alerta sea visible
+            setTimeout(() => {
+                props.navigation.navigate('Login');
+            }, 1000);
+        } catch (error) {
+            console.error(error);
+            let errorMessage = 'No se pudo registrar el usuario';
+            if (error.code === 'auth/email-already-in-use') {
+                errorMessage = 'El correo electrónico ya está en uso';
+            }
+            Alert.alert('Error', errorMessage);
+        }
+    };
+    
     return (
         <View style={styles.container}>
             <View style={styles.card}>
                 <Image style={styles.img} source={require("../assets/user4.png")} />
-                <Text style={styles.text}>Sing Up</Text>
+                <Text style={styles.text}>SIGN UP</Text>
 
                 <View style={styles.inputContainer}>
                     <Icon name="user" size={20} color="#727272" style={styles.icon} />
@@ -100,7 +100,7 @@ const registro = async () => {
                 </View>
 
                 <TouchableOpacity style={styles.boton} onPress={registro}>
-                    <Text style={styles.textButton}>REGISTRAR</Text>
+                    <Text style={styles.textButton}>Registrar</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -109,13 +109,13 @@ const registro = async () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 3,
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
     },
     card: {
-        width: 370,
+        width: '40%',
         padding: 20,
         borderRadius: 15,
         backgroundColor: '#fffaf6',
@@ -127,17 +127,16 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.3,
         shadowRadius: 5,
         elevation: 3,
-        justifyContent: 'center',
         alignItems: 'center',
     },
     img: {
-        width: 100,
-        height: 100,
+        width: 200,
+        height: 200,
         marginBottom: 15,
         borderRadius: 25,
     },
     text: {
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 30,
     },
@@ -145,16 +144,15 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         width: '100%',
-        height: 50,
+        height: 40,
         borderWidth: 1,
-        borderColor: '#E1E1E1',
-        borderRadius: 10,
-        marginBottom: 10,
-        paddingHorizontal: 17,
-        backgroundColor: '#F0F0F0',
+        borderColor: 'gray',
+        borderRadius: 20,
+        marginBottom: 15,
+        paddingHorizontal: 10,
     },
     icon: {
-        marginRight: 17,
+        marginRight: 10,
     },
     input: {
         flex: 1,
@@ -171,10 +169,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 15,
-        marginTop: 30,
     },
     textButton: {
-        fontSize: 16,
+        fontSize: 25,
         fontWeight: 'bold',
         textAlign: 'center',
         color: 'white',
