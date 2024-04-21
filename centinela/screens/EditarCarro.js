@@ -143,28 +143,32 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 30
+    
   },
   input: {
-    width: '100%',
-    height: 40,
+    width: 370,
+    height: 50,
     borderWidth: 1,
     borderColor: 'gray',
-    marginBottom: 20,
+    marginBottom: 15,
     padding: 10,
-    borderRadius: 20
+    borderRadius: 10
   },
   boton: {
-    backgroundColor: '#365B6D',
+    backgroundColor: '#a29259',
     fontVariant: 'bold',
-    width: 160,
-    height: 70,
-    alignContent: 'center',
-    borderRadius: 15
+    alignContent: 'center' ,
+    width: 190,
+    height: 50,
+    borderRadius: 10,
+    marginTop: 20,    
+    alignItems: 'center'
+
   },
   textButton: {
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: 'bold',
-    textAlign: 'center',
-    color: 'white'
+    paddingTop: 10,
+    color: '#fff'
   }
 });

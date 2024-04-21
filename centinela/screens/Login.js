@@ -46,11 +46,11 @@ export default function Login(props) {
     return (
         <View style={styles.container}>
             <View style={styles.card}>
-                <Text style={styles.title}>Login</Text>
 
                 <View style={styles.avatarContainer}>
-                    <Image source={require("../assets/user4.png")} style={styles.avatar} />
+                    <Image source={require("../assets/logo.png")} style={styles.avatar} />
                 </View>
+                <Text style={styles.title}>Log In</Text>
 
                 <Text style={styles.label}>Correo Electrónico</Text>
                 <TextInput
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     card: {
-        width: '30%',
+        width: 370,
         padding: 20,
         borderRadius: 15,
         backgroundColor: '#fffaf6',
@@ -116,11 +116,10 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.3,
         shadowRadius: 5,
         elevation: 3,
-        justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'stretch',
     },
     title: {
-        fontSize: 24,
+        fontSize: 25,
         fontWeight: 'bold',
         color: '#000',
         marginBottom: 20,
@@ -129,9 +128,8 @@ const styles = StyleSheet.create({
     avatarContainer: {
         width: 114,
         height: 114,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: 20,
+        alignSelf: 'center',
+        marginTop: 20,
     },
     avatar: {
         width: 100,
@@ -140,26 +138,28 @@ const styles = StyleSheet.create({
     },
     label: {
         fontSize: 16,
-        marginBottom: 5,
+        marginBottom: 8,
         color: '#727272',
-        textAlign: 'center',
+        textAlign: 'rigth',
     },
     input: {
         width: '100%',
-        height: 35,
+        height: 50,
         borderWidth: 1,
-        borderColor: 'gray',
+        borderColor: '#E1E1E1',
         marginBottom: 20,
         padding: 8,
-        borderRadius: 8,
+        borderRadius: 10,
         fontSize: 14,
-        textAlign: 'center',
+        
+        backgroundColor: '#F0F0F0',
     },
     btn: {
-        width: '30%',
+        width: 120,
         height: 40,
         justifyContent: 'center',
         alignItems: 'center',
+        alignSelf: 'center',
         backgroundColor: '#A29259',
         borderRadius: 8,
         marginTop: 20,
@@ -169,23 +169,30 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#FFFFFF',
         textTransform: 'uppercase',
+
     },
     registerBtn: {
         marginTop: 15,
-        backgroundColor: '#f0f8ff',
+        backgroundColor: '#fff',
         padding: 10,
-        borderRadius: 8,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#a29259',
+        marginBottom: 15,
+        alignSelf: 'center',
     },
     registerBtnText: {
         fontSize: 14,
+        width: 100,
         fontWeight: 'bold',
-        color: '#365B6D',
+        color: '#a29259',
         textTransform: 'uppercase',
+        
     },
     alternativeLoginText: {
-        marginTop: 15,
+        marginTop: 25,
         color: '#727272',
-        fontSize: 14,
+        fontSize: 12,
         fontWeight: 'bold',
         textTransform: 'uppercase',
         textAlign: 'center',
@@ -198,9 +205,13 @@ const styles = StyleSheet.create({
     socialButton: {
         width: 120,
         height: 40,
+        marginTop: 8,
+        marginBottom:15,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 8,
+        borderWidth: 1,
+        borderColor: '#E1E1E1',
         marginHorizontal: 10,
         backgroundColor: '#fff',
         flexDirection: 'row',

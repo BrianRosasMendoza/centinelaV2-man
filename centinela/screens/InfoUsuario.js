@@ -117,18 +117,18 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   button: {
-    backgroundColor: '#4e462a',
-    width: 140,
-    height: 40,
+    backgroundColor: '#a29259',
+    width: 200,
+    height: 50,
     borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
   },
   button2: {
-    backgroundColor: '#4e462a',
+    backgroundColor: '#a29259',
     width: 200,
-    height: 40,
+    height: 50,
     borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
@@ -137,6 +137,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     fontWeight: 'bold',
+    fontSize: 16,
   },
   changePasswordContainer: {
     marginTop: 20,

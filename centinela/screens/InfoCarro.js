@@ -141,20 +141,21 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 30,
+    marginBottom: 20,
   },
   button: {
-    backgroundColor: '#365B6D',
-    width: 140,
-    height: 40,
-    borderRadius: 15,
+    backgroundColor: '#a29259',
+    width: 180,
+    height: 50,
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
   },
   buttonText: {
-    color: 'white',
+    color: '#f7faf8',
     fontWeight: 'bold',
+    fontSize: 16,
   },
 });
 
