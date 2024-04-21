@@ -41,7 +41,6 @@ const registro = async () => {
     }
 };
 
-
     return (
         <View style={styles.container}>
             <View style={styles.card}>
