@@ -39,26 +39,7 @@ export default function PerfilUsuario({ navigation }) {
 
     fetchUserData();
   }, [isFocused]);
-  const sendEmergencySMS = async () => {
-    if (location) {
-      try {
-        // Resto del código sigue igual
-        const phoneNumber = contactoInfo.telefonoContacto;
-        const message = `¡Emergencia! Mi ubicación actual es: https://www.google.com/maps?q=${location.coords.latitude},${location.coords.longitude}`;
-        
-        const url = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
-        Linking.openURL(url).catch((err) => {
-          console.error('Error al abrir la aplicación de mensajes', err);
-          Alert.alert('Error', 'Error al abrir la aplicación de mensajes');
-        });
-      } catch (error) {
-        console.error('Error al obtener la información del contacto de emergnecia', error);
-      }
-    } else {
-      Alert.alert('Error', 'No se pudo obtener la ubicación');
-    }
-  };
- 
+  
 
   return (
     <ScrollView>
@@ -82,38 +63,7 @@ export default function PerfilUsuario({ navigation }) {
         </TouchableOpacity>
         <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate('InfoContacto')}>
           <Text style={styles.buttonText}>Contacto de emergencia</Text>
-        </TouchableOpacity>
-  
-        
-        <View style={styles.slide}>
-          <TouchableWithoutFeedback>
-            <ImageZoom
-              cropWidth={2000}
-              cropHeight={700}
-              imageWidth={1500}
-              imageHeight={1500}
-            >
-              <View style={styles.mapContainer}>
-                <Image source={require('../assets/map.png')} style={styles.image2} />
-              </View>
-            </ImageZoom>
-          </TouchableWithoutFeedback>
-        </View>
-        <View style={styles.barra}>
-          <TouchableOpacity onPress={sendEmergencySMS} style={styles.buttonContainer}>
-            <Image source={require('../assets/advertencia.png')} style={styles.buttonImage} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('InfoUsuario')} style={styles.buttonContainer}>
-            <Image source={require('../assets/userB.png')} style={styles.buttonImage} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('InfoCarro')} style={styles.buttonContainer}>
-            <Image source={require('../assets/iconoCarro.png')} style={styles.buttonImage} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('')} style={styles.buttonContainer}>
-            <Image source={require('../assets/notificacion.png')} style={styles.buttonImage} />
-          </TouchableOpacity>
-        </View>
-      
+        </TouchableOpacity>    
       </View>
     </ScrollView>
   );
