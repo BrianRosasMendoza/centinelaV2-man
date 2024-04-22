@@ -51,6 +51,22 @@ export default function Carro(props) {
 
   const saveData = async () => {
     try {
+      const { marca, modelo, year, vin, matricula } = state;
+
+      // Validación de campos obligatorios
+      if (!marca || !modelo || !year || !vin || !matricula) {
+        Alert.alert('Error', 'Por favor completa todos los campos.');
+        return;
+      }
+
+      // Validación de formato de año
+      const yearNum = parseInt(year);
+      if (isNaN(yearNum) || yearNum < 1900 || yearNum > new Date().getFullYear()) {
+        Alert.alert('Error', 'Por favor introduce un año válido.');
+        return;
+      }
+
+      // Resto del código para guardar los datos...
       const auth = getAuth();
       const user = auth.currentUser;
 

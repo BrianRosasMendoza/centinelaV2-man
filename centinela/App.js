@@ -95,7 +95,9 @@ function MyStack() {
             backgroundColor:'#221f17'
           }
         }
-      }/>
+      }
+      
+      />
         <Stack.Screen name="InfoCarro" component={InfoCarro}  options={
         {
           title:'Datos Del vehiculo',
