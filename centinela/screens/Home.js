@@ -7,6 +7,7 @@ import { getAuth } from 'firebase/auth';
 import { useIsFocused } from '@react-navigation/native';
 import appFirebase from '../credenciales';
 import ImageZoom from 'react-native-image-pan-zoom';
+
 //modificacion del carrusel de imagenes y barra inferior
 const db = getFirestore(appFirebase);
 
@@ -34,14 +35,14 @@ export default function Home(props) {
             if (userData.contactoEmergencia) {
               setContactoInfo(userData.contactoEmergencia);
             } else {
-              console.error('No se encontró la información del contacto de emergencia');
+              Alert.alert('No se encontró la información del contacto de emergencia');
             }
           } else {
-            console.error('No se encontró el registro del contacto de emergencia');
+            Alert.alert('No se encontró el registro del contacto de emergencia');
           }
         }
       } catch (error) {
-        console.error('Error al obtener la información del contacto de emergencia', error);
+        Alert.alert('Error al obtener la información del contacto de emergencia');
       }
     };
 

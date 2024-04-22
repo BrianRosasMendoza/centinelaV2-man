@@ -4,6 +4,8 @@ import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { useIsFocused } from '@react-navigation/native';
 import appFirebase from '../credenciales';
+import ImageZoom from 'react-native-image-pan-zoom';
+
 
 const db = getFirestore(appFirebase);
 
@@ -37,8 +39,7 @@ export default function PerfilUsuario({ navigation }) {
 
     fetchUserData();
   }, [isFocused]);
-
- 
+  
 
   return (
     <ScrollView>
@@ -56,20 +57,17 @@ export default function PerfilUsuario({ navigation }) {
         <Text style={styles.text}>Correo: {auth.currentUser.email}</Text>
         <Text style={styles.text}>Contraseña: *********</Text>
         <Text style={styles.text}>Teléfono: {userInfo.telefono}</Text>
-
+  
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('EditarUsuario')}>
           <Text style={styles.buttonText}>Editar</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate('InfoContacto')}>
           <Text style={styles.buttonText}>Contacto de emergencia</Text>
-
-        </TouchableOpacity>
-
-        
+        </TouchableOpacity>    
       </View>
     </ScrollView>
   );
-}
+  }
 
 const styles = StyleSheet.create({
   vertical: {
