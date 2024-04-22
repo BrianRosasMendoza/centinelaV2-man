@@ -11,6 +11,7 @@ const facebookProvider = new FacebookAuthProvider();
 export default function Login(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [passwordVisible, setPasswordVisible] = useState(false); // Estado para controlar la visibilidad de la contraseña
 
     const logueo = async () => {
         try {
@@ -20,6 +21,11 @@ export default function Login(props) {
         } catch (error) {
             Alert.alert('Error', error.message);
         }
+    };
+
+    // Manejador para cambiar la visibilidad de la contraseña
+    const togglePasswordVisibility = () => {
+        setPasswordVisible(!passwordVisible);
     };
 
     // Manejador para iniciar sesión con Google
@@ -70,11 +76,14 @@ export default function Login(props) {
                     <TextInput
                         style={styles.input}
                         placeholder="Contraseña"
-                        secureTextEntry
+                        secureTextEntry={!passwordVisible} // Usa el estado para determinar si la contraseña debe mostrarse o no
                         value={password}
                         onChangeText={setPassword}
                         placeholderTextColor="#727272"
                     />
+                    <TouchableOpacity onPress={togglePasswordVisibility} style={styles.eyeIcon}>
+                        <Icon name={passwordVisible ? "eye" : "eye-slash"} size={20} color="#727272" />
+                    </TouchableOpacity>
                 </View>
 
                 <TouchableOpacity style={styles.btn} onPress={logueo}>
@@ -169,6 +178,9 @@ const styles = StyleSheet.create({
         height: '100%', // Para ocupar toda la altura del contenedor
         fontSize: 14,
     },
+    eyeIcon: {
+        marginLeft: 10,
+    },
     btn: {
         width: 120,
         height: 40,
@@ -240,3 +252,4 @@ const styles = StyleSheet.create({
         color: '#000',
     },
 });
+
