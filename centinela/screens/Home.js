@@ -1,3 +1,4 @@
+// Importa las funciones necesarias
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Alert, TouchableOpacity, Image, Text, Linking, Dimensions, TouchableWithoutFeedback } from 'react-native';
 import Swiper from 'react-native-swiper/src';
@@ -8,7 +9,6 @@ import { useIsFocused } from '@react-navigation/native';
 import appFirebase from '../credenciales';
 import ImageZoom from 'react-native-image-pan-zoom';
 
-//modificacion del carrusel de imagenes y barra inferior
 const db = getFirestore(appFirebase);
 
 export default function Home(props) {
@@ -82,7 +82,6 @@ export default function Home(props) {
 
   return (
     <View style={styles.container}>
-
       <View style={styles.slide}>
         <TouchableWithoutFeedback>
           <ImageZoom
@@ -110,6 +109,10 @@ export default function Home(props) {
         <TouchableOpacity onPress={() => props.navigation.navigate('')} style={styles.buttonContainer}>
           <Image source={require('../assets/notificacion.png')} style={styles.buttonImage} />
         </TouchableOpacity>
+        {/* Nuevo ícono */}
+        <TouchableOpacity onPress={() => props.navigation.navigate('Contacto')} style={styles.buttonContainer}>
+          <Image source={require('../assets/emergencia_icono.png')} style={styles.buttonImage} />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -122,30 +125,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white',
   },
-  /*carouselContainer: {
-    width: '100%',
-    height: '50%',
-    marginTop: -120, // Ajusta según tus necesidades para pegar el carrusel arriba
-  },
-
-  image: {
-    width: '70%', // Ajusta según tus necesidades
-    height: '70%', // Ajusta según tus necesidades
-    resizeMode: 'cover',
-  },
-  wrapper: {},
-  slide: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-
-  },*/
   mapContainer: {
     width: '100%',
     aspectRatio: 1,
     overflow: 'hidden',
   },
- 
   image2: {
     width: '100%',
     height: '100%',
@@ -163,8 +147,6 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginHorizontal: '5%',
-    //marginStart: 30,
-    //marginEnd: 30,
     width: 45,
     height: 45,
     borderRadius: 22.5,

@@ -97,7 +97,7 @@ export default function Contacto(props) {
           onChangeText={(value) => handleChangeText(value, 'parentescoContacto')}
           value={state.parentescoContacto}
         />
-        <TouchableOpacity style={styles.boton} onPress={saveData}>
+ <TouchableOpacity style={styles.boton} onPress={saveData => props.navigation.navigate('Home')}>
           <Text style={styles.textButton}>Guardar datos</Text>
         </TouchableOpacity>
       </View>
