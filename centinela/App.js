@@ -18,6 +18,8 @@ import EditarCarro from './screens/EditarCarro';
 import EditarEmergencia from './screens/EditarEmergencia';
 import EstadoCarro from './screens/EstadoCarro';
 import olvidarContra from './screens/olvidarContra';
+import { Button } from 'react-native';
+
 
 
 export default function App() {
@@ -27,16 +29,20 @@ const Stack = createStackNavigator();
 function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Login" component={Login} options={
-        {
-          title:'Inicio de Sesión',
-          headerTintColor:'white',
-          headerTitleAlign:'center',
-          headerStyle:{
-            backgroundColor:'#221f17'
+      <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+          title: 'Inicio de Sesión',
+          headerTintColor: 'white',
+          headerTitleAlign: 'center',
+          headerStyle: {
+          backgroundColor: '#221f17',
           }
-        }
-      }/>
+        }} 
+      />
+      
+
      <Stack.Screen name="RegisterUser" component={RegisterUser} options={
         {
           title:'Registro cuenta de usuario',
@@ -157,10 +163,21 @@ function MyStack() {
           headerStyle:{
             backgroundColor:'#221f17'
           }
-        }
+        } 
       }/>
-      
-   
+
+      <Stack.Screen name="olvidarContra" component={olvidarContra} options={
+        {
+          title:'Registro cuenta de usuario',
+          headerTintColor:'white',
+          headerTitleAlign:'center',
+          headerStyle:{
+            backgroundColor:'#221f17'
+          }
+        }
+      } />
+
+
     </Stack.Navigator>
   );
 }

@@ -78,6 +78,10 @@ export default function Login(props) {
                     <Text style={styles.registerBtnText}>Registrarme</Text>
                 </TouchableOpacity>
 
+                <TouchableOpacity style={styles.olvidarContraBtn} onPress={() => props.navigation.navigate('olvidarContra')}>
+                    <Text style={styles.olvidarContraBtnText}>¿Olvidaste tu contraseña?</Text>
+                </TouchableOpacity>
+
                 <Text style={styles.alternativeLoginText}>Iniciar sesión de otra manera</Text>
 
                 <View style={styles.socialLogin}>
