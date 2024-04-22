@@ -29,6 +29,7 @@ export default function RegisterUser(props) {
             Alert.alert('Registro exitoso', 'Redirigiendo a la pantalla de inicio de sesión...');
             // Agregar un pequeño retraso antes de redirigir para asegurar que la alerta sea visible
             setTimeout(() => {
+                console.log("Registrando usuario...");
                 props.navigation.navigate('Login');
             }, 1000);
         } catch (error) {
@@ -41,6 +42,7 @@ export default function RegisterUser(props) {
         }
     };
     
+    console.log(props.navigation); // Verifica si props.navigation está pasando correctamente
     return (
         <View style={styles.container}>
             <View style={styles.card}>
@@ -99,7 +101,7 @@ export default function RegisterUser(props) {
                     </TouchableOpacity>
                 </View>
 
-                <TouchableOpacity style={styles.boton} onPress={registro}>
+                <TouchableOpacity style={styles.boton} onPress={() => props.navigation.navigate('Login')}>
                     <Text style={styles.textButton}>Registrar</Text>
                 </TouchableOpacity>
             </View>
