@@ -230,4 +230,21 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#000',
     },
+
+    olvidarContraBtn: {
+        marginTop: 15,
+        backgroundColor: '#fff',
+        paddingVertical: 8,
+        paddingHorizontal: 16,
+        borderRadius: 8,
+        borderWidth: 1,
+        borderColor: '#a29259',
+        alignSelf: 'center',
+    },
+    olvidarContraBtnText: {
+        fontSize: 12,
+        fontWeight: 'bold',
+        color: '#a29259',
+        textTransform: 'uppercase',
+    },
 });

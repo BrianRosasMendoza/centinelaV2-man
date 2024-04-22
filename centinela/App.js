@@ -165,10 +165,9 @@ function MyStack() {
           }
         } 
       }/>
-
       <Stack.Screen name="olvidarContra" component={olvidarContra} options={
         {
-          title:'Registro cuenta de usuario',
+          title:'Recuperar contraseña',
           headerTintColor:'white',
           headerTitleAlign:'center',
           headerStyle:{
