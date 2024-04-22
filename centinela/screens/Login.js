@@ -65,15 +65,17 @@ export default function Login(props) {
                     />
                 </View>
                 <Text style={styles.label}>Contraseña</Text>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Contraseña"
-                    secureTextEntry
-                    value={password}
-                    onChangeText={setPassword}
-                    placeholderTextColor="#727272"
-                />
-                
+                <View style={styles.inputContainer}>
+                    <Icon name="lock" size={20} color="#727272" style={styles.icon} /> {/* Icono de contraseña */}
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Contraseña"
+                        secureTextEntry
+                        value={password}
+                        onChangeText={setPassword}
+                        placeholderTextColor="#727272"
+                    />
+                </View>
 
                 <TouchableOpacity style={styles.btn} onPress={logueo}>
                     <Text style={styles.btnText}>INGRESAR</Text>
@@ -145,7 +147,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         marginBottom: 8,
         color: '#727272',
-        textAlign: 'rigth',
+        textAlign: 'right',
     },
     inputContainer: {
         flexDirection: 'row',
