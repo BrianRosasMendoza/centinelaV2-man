@@ -11,7 +11,7 @@ const facebookProvider = new FacebookAuthProvider();
 export default function Login(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [passwordVisible, setPasswordVisible] = useState(false); // Estado para controlar la visibilidad de la contraseña
+    const [passwordVisible, setPasswordVisible] = useState(false);
 
     const logueo = async () => {
         try {
@@ -23,12 +23,10 @@ export default function Login(props) {
         }
     };
 
-    // Manejador para cambiar la visibilidad de la contraseña
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
     };
 
-    // Manejador para iniciar sesión con Google
     const handleGoogleSignIn = async () => {
         try {
             await signInWithPopup(auth, googleProvider);
@@ -39,7 +37,6 @@ export default function Login(props) {
         }
     };
 
-    // Manejador para iniciar sesión con Facebook
     const handleFacebookSignIn = async () => {
         try {
             await signInWithPopup(auth, facebookProvider);
@@ -53,7 +50,6 @@ export default function Login(props) {
     return (
         <View style={styles.container}>
             <View style={styles.card}>
-
                 <View style={styles.avatarContainer}>
                     <Image source={require("../assets/logo.png")} style={styles.avatar} />
                 </View>
@@ -61,7 +57,7 @@ export default function Login(props) {
 
                 <Text style={styles.label}>Correo Electrónico</Text>
                 <View style={styles.inputContainer}>
-                    <Icon name="envelope" size={20} color="#727272" style={styles.icon} /> {/* Icono de correo */}
+                    <Icon name="envelope" size={20} color="#727272" style={styles.icon} />
                     <TextInput
                         style={styles.input}
                         placeholder="Correo"
@@ -72,11 +68,11 @@ export default function Login(props) {
                 </View>
                 <Text style={styles.label}>Contraseña</Text>
                 <View style={styles.inputContainer}>
-                    <Icon name="lock" size={20} color="#727272" style={styles.icon} /> {/* Icono de contraseña */}
+                    <Icon name="lock" size={20} color="#727272" style={styles.icon} />
                     <TextInput
                         style={styles.input}
                         placeholder="Contraseña"
-                        secureTextEntry={!passwordVisible} // Usa el estado para determinar si la contraseña debe mostrarse o no
+                        secureTextEntry={!passwordVisible}
                         value={password}
                         onChangeText={setPassword}
                         placeholderTextColor="#727272"
@@ -85,6 +81,10 @@ export default function Login(props) {
                         <Icon name={passwordVisible ? "eye" : "eye-slash"} size={20} color="#727272" />
                     </TouchableOpacity>
                 </View>
+
+                <TouchableOpacity onPress={() => props.navigation.navigate('olvidarContra')}>
+                    <Text style={styles.forgotPassword}>Olvidaste contraseña</Text>
+                </TouchableOpacity>
 
                 <TouchableOpacity style={styles.btn} onPress={logueo}>
                     <Text style={styles.btnText}>INGRESAR</Text>
@@ -251,5 +251,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#000',
     },
+    forgotPassword: {
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginBottom: 10, // Espacio adicional para separar del botón INGRESAR
+        textDecorationLine: 'underline',
+    },
 });
-
