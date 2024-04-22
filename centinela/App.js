@@ -17,6 +17,7 @@ import EditarUsuario from './screens/EditarUsuario';
 import EditarCarro from './screens/EditarCarro';
 import EditarEmergencia from './screens/EditarEmergencia';
 import EstadoCarro from './screens/EstadoCarro';
+import olvidarContra from './screens/olvidarContra';
 
 
 export default function App() {
