@@ -1,3 +1,4 @@
+// Importa las funciones necesarias
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image, Alert, ScrollView } from 'react-native';
 import { getFirestore, doc, getDoc, updateDoc } from 'firebase/firestore';
@@ -5,9 +6,11 @@ import { getAuth } from 'firebase/auth';
 import { useIsFocused } from '@react-navigation/native';
 import appFirebase from '../credenciales';
 
+// Obtén una instancia de Firestore
 const db = getFirestore(appFirebase);
 
 export default function Contacto(props) {
+  // Estado inicial para los datos de contacto
   const initialState = {
     nombreContacto: '',
     apellidoContacto: '',
@@ -15,9 +18,11 @@ export default function Contacto(props) {
     parentescoContacto: ''
   };
 
+  // Estado para almacenar los datos de contacto
   const [state, setState] = useState(initialState);
   const isFocused = useIsFocused();
 
+  // Efecto para cargar los datos del usuario cuando la pantalla está enfocada
   useEffect(() => {
     const cargarDatosUsuario = async () => {
       try {
@@ -27,7 +32,7 @@ export default function Contacto(props) {
         if (user) {
           const userId = user.uid;
 
-          // Obtener el documento existente del usuario
+          // Obtén el documento existente del usuario
           const userDocRef = doc(db, 'Usuarios', userId);
           const userDoc = await getDoc(userDocRef);
 
@@ -44,10 +49,12 @@ export default function Contacto(props) {
     cargarDatosUsuario();
   }, [isFocused]);
 
+  // Función para manejar cambios en los campos de texto
   const handleChangeText = (value, name) => {
     setState({ ...state, [name]: value });
   };
 
+  // Función para guardar los datos en Firestore
   const saveData = async () => {
     try {
       const auth = getAuth();
@@ -56,7 +63,7 @@ export default function Contacto(props) {
       if (user) {
         const userId = user.uid;
 
-        // Obtener el documento existente del usuario
+        // Obtén el documento existente del usuario
         const userDocRef = doc(db, 'Usuarios', userId);
         const userDoc = await getDoc(userDocRef);
 
@@ -68,7 +75,10 @@ export default function Contacto(props) {
             }
           });
 
-          Alert.alert('Actualización exitosa', 'Accediendo a la siguiente sección');
+          // Mostrar mensaje de éxito
+          Alert.alert('Actualización exitosa', 'Los datos se han guardado correctamente.');
+
+          // Redirigir al usuario a la pantalla de inicio
           props.navigation.navigate('Home');
         } else {
           // Si el documento no existe, mostrar un mensaje de error
@@ -77,7 +87,7 @@ export default function Contacto(props) {
       }
     } catch (error) {
       console.error('Error al guardar los datos:', error);
-      Alert.alert('Error', 'No se pudo hacer la actualización');
+      Alert.alert('Error', 'No se pudo guardar los datos.');
     }
   };
 
@@ -111,7 +121,7 @@ export default function Contacto(props) {
           onChangeText={(value) => handleChangeText(value, 'parentescoContacto')}
           value={state.parentescoContacto}
         />
-        <TouchableOpacity style={styles.boton} onPress={saveData}>
+ <TouchableOpacity style={styles.boton} onPress={saveData => props.navigation.navigate('Contacto')}>
           <Text style={styles.textButton}>Guardar datos</Text>
         </TouchableOpacity>
       </View>
