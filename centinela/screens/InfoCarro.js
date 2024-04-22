@@ -106,7 +106,7 @@ const InfoCarro = ({ navigation }) => {
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('EditarCarro')}>
           <Text style={styles.buttonText}>Editar</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={handleConnect}>
+        <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('EstadoCarro')}>
           <Text style={styles.buttonText}>Estado Del carro</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={handleAccidente}>
